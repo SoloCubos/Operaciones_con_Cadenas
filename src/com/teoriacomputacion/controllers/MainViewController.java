@@ -51,6 +51,7 @@ public class MainViewController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb){
         model = new OperarCadenas();
+        
         cmbOperaciones.setPromptText("Seleccione una Operación:");
         cmbOperaciones.getItems().addAll("Concatenar", "Potenciar", "Longitud", "Reflexion", "Prefijos", "Sufijos");
         myListView.setVisible(false);
@@ -58,6 +59,7 @@ public class MainViewController implements Initializable{
         cmbOperaciones.setOnAction((event) -> {
             if(cmbOperaciones.getValue().equals("Concatenar")) {
 
+                myListView.getItems().clear();
                 myListView.setVisible(false);
                 lblCad2.setVisible(true);
                 lblCad1.setText("Cadena 1:");
@@ -66,7 +68,7 @@ public class MainViewController implements Initializable{
 
             }else if(cmbOperaciones.getValue().equals("Longitud") || cmbOperaciones.getValue().equals("Reflexion")){
                 
-                txtCadena2.setText("");
+                myListView.getItems().clear();
                 myListView.setVisible(false);
                 txtCadena2.setVisible(false);
                 lblCad1.setText("Cadena:");
@@ -74,7 +76,7 @@ public class MainViewController implements Initializable{
 
             }else if(cmbOperaciones.getValue().equals("Potenciar")){
                 
-                txtCadena2.setText("");
+                myListView.getItems().clear();
                 myListView.setVisible(false);
                 txtCadena2.setVisible(true);
                 lblCad2.setVisible(true);
@@ -83,7 +85,7 @@ public class MainViewController implements Initializable{
 
             }else{
                 
-                txtCadena2.setText("");
+                myListView.getItems().clear();
                 myListView.setVisible(true);
                 txtCadena2.setVisible(false);
                 lblCad1.setText("Cadena:");
@@ -99,44 +101,42 @@ public class MainViewController implements Initializable{
         try {
             if (cmbOperaciones.getValue().equals("Concatenar") && !txtCadena1.getText().isEmpty() && !txtCadena2.getText().isEmpty()) {
                 
-                txtResultado.setText("");
                 myListView.getItems().clear();
                 txtResultado.setText(model.concatenar(txtCadena1.getText(), txtCadena2.getText()));
 
             } else if(cmbOperaciones.getValue().equals("Potenciar") && !txtCadena1.getText().isEmpty() && !txtCadena2.getText().isEmpty()) {
                 
-                txtResultado.setText("");
                 myListView.getItems().clear();
                 txtResultado.setText(model.potenciar(txtCadena1.getText(), Integer.parseInt(txtCadena2.getText())));
 
             } else if (cmbOperaciones.getValue().equals("Longitud") && !txtCadena1.getText().isEmpty()) {
                 
-                txtResultado.setText("");
+                
                 myListView.getItems().clear();
                 txtResultado.setText(model.longitud(txtCadena1.getText()));
 
-            } else if (cmbOperaciones.getValue().equals("Reflexion") && !txtCadena1.getText().isEmpty()) {
+            } else if (cmbOperaciones.getValue().equals("Reflexion") && !txtCadena1.getText().isEmpty()) {                
                 
-                txtResultado.setText("");
                 myListView.getItems().clear();
                 txtResultado.setText(model.reflexion(txtCadena1.getText()));
 
             } else if (cmbOperaciones.getValue().equals("Prefijos") && !txtCadena1.getText().isEmpty()) {
-                
-                txtResultado.setText("");
+                              
                 txtResultado.setText("------------------------------->>>");
                 myListView.getItems().clear();
                 myListView.getItems().addAll(model.prefijo(txtCadena1.getText()));
 
-            } else if (cmbOperaciones.getValue().equals("Sufijos") && !txtCadena1.getText().isEmpty()) {
+            } else if (cmbOperaciones.getValue().equals("Sufijos") && !txtCadena1.getText().isEmpty()) {                
                 
-                txtResultado.setText("");
                 txtResultado.setText("------------------------------->>>");
                 myListView.getItems().clear();
                 myListView.getItems().addAll(model.sufijo(txtCadena1.getText()));
-                myListView.set
 
             } else {
+                txtCadena1.setText("ERROR");
+                txtCadena2.setText("ERROR");
+                txtResultado.setText("ERROR");
+                myListView.getItems().add("ERROR");
                 JOptionPane.showMessageDialog(null, "Rellene los campos", "ERROR!!", JOptionPane.ERROR_MESSAGE);
             }
         } catch (Exception e) {
