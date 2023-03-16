@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="462.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.teoriacomputacion.controllers.MainViewController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teoriacomputacion.controllers.MainViewController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="443.0" minWidth="10.0" prefWidth="334.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="290.0" minWidth="10.0" prefWidth="118.0" />
@@ -47,10 +47,11 @@
             <Text layoutX="50.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realice distintas operaciones con cadenas:" />
             <TextField fx:id="txtCadena1" layoutX="146.0" layoutY="51.0" />
             <TextField fx:id="txtCadena2" layoutX="146.0" layoutY="90.0" />
-            <ComboBox fx:id="cmbOperaciones" layoutX="38.0" layoutY="138.0" prefHeight="25.0" prefWidth="200.0" />
-            <Text layoutX="138.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado:" />
+            <ComboBox fx:id="cmbOperaciones" layoutX="38.0" layoutY="138.0" prefHeight="25.0" prefWidth="257.0" />
+            <Text layoutX="77.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Resultado:" />
             <TextArea fx:id="txtResultado" layoutX="29.0" layoutY="216.0" prefHeight="27.0" prefWidth="273.0" />
-            <Button fx:id="btnOperar" layoutX="248.0" layoutY="138.0" mnemonicParsing="false" onAction="#handleButtonOperar" text="Operar" />
+            <Button fx:id="btnOperar" layoutX="153.0" layoutY="179.0" mnemonicParsing="false" onAction="#handleButtonOperar" text="Operar" />
+            <Button fx:id="btnLimpiar" layoutX="232.0" layoutY="179.0" mnemonicParsing="false" onAction="#handleButtonLimpiar" text="Limpiar" />
          </children>
       </AnchorPane>
       <ListView fx:id="myListView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
