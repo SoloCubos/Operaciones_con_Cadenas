@@ -4,22 +4,13 @@
     // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
-
-        {
-            "type": "java",
-            "name": "Current File",
-            "request": "launch",
-            "mainClass": "${file}"
-            
-        },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
-            "mainClass": "com.teoricacomputacion.main.Main",
+            "mainClass": "com.teoricacomputacion.views.Main",
             "projectName": "Operaciones_con_Cadenas_c02d1e53",
-            "vmArgs": "--module-path D:/Downloads/javafx-sdk-19.0.2.1/lib --add-modules javafx.controls,javafx.fxml",
+            "vmArgs": "--module-path D:/Downloads/javafx-sdk-19.0.2.1/lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

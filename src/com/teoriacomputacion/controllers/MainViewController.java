@@ -1,10 +1,10 @@
-package com.teoricacomputacion.controllers;
+package com.teoriacomputacion.controllers;
 
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-import com.teoricacomputacion.model.OperarCadenas;
+import com.teoriacomputacion.model.OperarCadenas;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -75,6 +75,7 @@ public class MainViewController implements Initializable{
                 txtCadena2.setVisible(false);
                 lblCad1.setText("Cadena");
                 lblCad2.setVisible(false);
+            }
         }); 
         txtResultado.setEditable(false); 
     }

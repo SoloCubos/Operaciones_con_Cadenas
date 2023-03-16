@@ -1,4 +1,4 @@
-package com.teoricacomputacion.model;
+package com.teoriacomputacion.model;
 
 import java.util.ArrayList;
 
